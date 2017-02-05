@@ -1,0 +1,30 @@
+{
+  "name": "slack-comics",
+  "version": "1.0.0",
+  "description": "slack-comics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+   "dependencies": {
+    "request": "^2.65.0",
+    "slack-terminalize": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasantayyar/slack-comics.git"
+  },
+  "keywords": [
+    "slack",
+    "web",
+    "comics",
+    "comics",
+    "robot"
+  ],
+  "author": "tayyar.besik@gmail.com",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hasantayyar/slack-comics/issues"
+  },
+  "homepage": "https://github.com/hasantayyar/slack-comics#readme"
+}
