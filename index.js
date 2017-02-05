@@ -1,7 +1,9 @@
 const cron = require('node-cron');
 const config = require('./config');
+const comics = require('./comics');
 
-cron.schedule('*/2 * * * *', function(){
-  console.log('running a task every 24 hours');
+comics();
+
+cron.schedule('*/2 * * * *', function() {
+	console.log('running a task every 24 hours');
 });
-

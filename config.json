@@ -1,6 +1,9 @@
 {
-	"channel" : "#random-nerd",
-	"user" : "web-comic",
-	"rss-list": ["http://www.loadingartist.com/feed/"],
-	"token": ""
+	"rssList": ["http://www.loadingartist.com/feed/"],
+	"slack": {
+		"channel": "#random-nerd",
+		"token": "",
+		"url": "",
+		"username" : "web-comic"
+	}
 }
