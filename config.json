@@ -1,5 +1,5 @@
 {
-	"rssList": ["http://www.loadingartist.com/feed/"],
+	"rssList": ["http://www.smbc-comics.com/rss.php", "http://www.loadingartist.com/feed/"],
 	"slack": {
 		"channel": "#random-nerd",
 		"token": "",

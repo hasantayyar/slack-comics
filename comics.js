@@ -1,40 +1,40 @@
 const request = require('request'),
-	config = require('./config'),
 	feedParser = require('feedparser'),
 	slack = require('./slack'),
 	cheerio = require('cheerio');
 
-module.exports = () => {
+module.exports = (source) => {
 
-	var req = request(config.rssList[0]);
-	var feedparser = new feedParser([]);
+	let req = request(source);
+	let parser = new feedParser();
 
-	req.on('error', error => console.log('request error.'));
+	req.on('error', (err) => console.log(err))
 
 	req.on('response', (res) => {
 		if (res.statusCode !== 200) {
-			req.emit('error', new Error('Bad status code'));
-		} else {
-			req.pipe(feedparser);
+			return req.emit('error', new Error('Bad status code'));
 		}
+		req.pipe(parser);
 	});
 
-	feedparser.on('error', (error) => console.log('parsing error. '));
+	parser.on('error', (err) => console.log(err));
 
-	feedparser.on('readable', () => {
-		var meta = feedparser.meta;
-		var item;
-		while (item = feedparser.read()) {
-			if (item.title && item.description && item.link) {
-				let $ = cheerio.load(item.description);
-				let firstImage = $('img').first().attr('src');
-				console.log('posting to channel')
-				slack.push({
-					message: title
-				}, (err, data) => console.log('posted to channel', data));
-			}
+	parser.on('end', () => console.log('End parsing'));
+
+	parser.on('readable', () => {
+		let meta = parser.meta;
+		let item = parser.read();
+		if (item && item.title && item.description && item.link) {
+			let $ = cheerio.load(item.description);
+			let firstImage = $('img').first().attr('src');
+			console.log('posting to channel')
+			slack.push({
+				attachments: [{
+					image_url: firstImage
+				}],
+				message: 'Hey! check out today\'s comic. ' + item.title + ' ' + item.link,
+			}, (err, data) => console.log('posted to channel', data));
 		}
 	});
-
 
 };

@@ -22,7 +22,7 @@ module.exports.push = (options, next) => {
     if (!err && response.statusCode == 200)
       next(null, body);
     else
-      next(error || new Error("Unable to send to slack."));
+      next(err || new Error("Unable to send to slack."));
 
   });
 }
