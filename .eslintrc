@@ -1,0 +1,184 @@
+---
+  extends: eslint:recommended
+  env:
+    es6: true
+    node: true
+  ecmaFeatures:
+    globalReturn: true
+  rules:
+    # regex
+    no-div-regex: error
+
+    # literals
+    quotes:
+      - error
+      - single
+      - avoid-escape
+    no-new-object: error
+    no-array-constructor: error
+    comma-dangle:
+      - error
+      - always-multiline
+    comma-style: error
+    array-bracket-spacing: error
+    object-curly-spacing: error
+    key-spacing: error
+    quote-props:
+      - error
+      - consistent
+    no-template-curly-in-string: error
+
+    # comparison
+    no-implicit-coercion: error
+    eqeqeq: error
+    no-self-compare: error
+    yoda:
+      - error
+      - never
+      - onlyEquality: true
+
+    # functions
+    no-loop-func: error
+    no-return-assign: error
+    no-extra-bind: error
+    dot-notation:
+      - error
+      - allowPattern: ^(site|impression|click|qualifiedClick|e|expires|true|false|win)$|_
+    dot-location:
+      - error
+      - property
+    no-param-reassign: error
+    no-proto : error
+    no-useless-call: error
+    callback-return: error
+    handle-callback-err: error
+    func-style:
+      - error
+      - declaration
+      - allowArrowFunctions: true
+
+    consistent-return:
+      - error
+      - treatUndefinedAsUnspecified: true
+    no-else-return: error
+    no-var: error
+    prefer-const:
+      - error
+      - destructuring: all
+    object-shorthand: error
+    arrow-parens: error
+    prefer-arrow-callback: error
+    prefer-rest-params: error
+    prefer-spread: error
+    func-name-matching: error
+    func-names:
+      - error
+      - never
+    arrow-body-style: error
+
+    # classes
+    new-cap: error
+    no-new: error
+    no-new-require: error
+    no-new-wrappers: error
+
+    # var
+    one-var:
+      - error
+      - never
+    block-scoped-var: error
+
+    # numbers
+    no-floating-decimal: error
+    radix: error
+
+    # semicolon
+    semi: error
+    semi-spacing: error
+
+    # case
+    no-fallthrough: error
+    default-case: error
+
+    # keywords / unary
+    keyword-spacing: error
+    no-lonely-if: error
+    space-unary-ops: error
+    no-nested-ternary: error
+    no-unneeded-ternary: error
+
+    # whitespace / braces / lines
+    indent:
+      - error
+      - 2
+    max-len:
+      - error
+      - 80
+    comma-spacing: error
+    space-before-blocks: error
+    operator-linebreak:
+      - error
+      - after
+    no-spaced-func: error
+    no-multiple-empty-lines:
+      - error
+      - max: 1
+    eol-last: error
+    linebreak-style: error
+    no-multi-spaces: error
+    no-trailing-spaces: error
+    space-in-parens: error
+    space-infix-ops: error
+    space-before-function-paren:
+      - error
+      - never
+    brace-style:
+      - error
+      - 1tbs
+    curly:
+      - error
+      - multi-line
+      - consistent
+    no-extra-parens: error
+    padded-blocks:
+      - 2
+      - never
+
+    # misc
+    accessor-pairs: error
+    camelcase: error
+    no-console: 0
+    no-alert: error
+    strict:
+      - error
+      - global
+    no-shadow-restricted-names: error
+    no-native-reassign: error
+    no-extend-native: error
+    no-eval: error
+    no-with: error
+    no-throw-literal: error
+    no-sequences: error
+    no-octal-escape: error
+    no-lone-blocks: error
+    no-unused-expressions: error
+    no-multi-str: error
+    wrap-iife:
+      - error
+      - any
+    no-script-url: error
+    no-prototype-builtins: error
+    no-unsafe-negation: error
+
+    # legacy config
+    no-warning-comments: error
+    valid-jsdoc: error
+    no-implied-eval: error
+    no-caller: error
+    no-iterator: error
+    no-labels: error
+    no-label-var: error
+    no-mixed-requires: error
+    block-spacing:
+      - error
+      - never
