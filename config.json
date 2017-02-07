@@ -1,9 +1,9 @@
 {
-	"rssList": ["http://www.smbc-comics.com/rss.php", "http://www.loadingartist.com/feed/"],
+	"rssList": ["http://www.smbc-comics.com"],
 	"slack": {
-		"channel": "#random-nerd",
+		"channel": "#web-comic-channel",
 		"token": "",
-		"url": "",
+		"url": "https://xxxxxxxx.slackcom/services/hooks/incoming-webhook",
 		"username" : "web-comic"
 	}
 }
