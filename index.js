@@ -6,10 +6,10 @@ const comics = require('./comics');
 
 cron.schedule('* */24 * * *', () => {
   console.log('running a task every 24 hours');
-  const source = config.rssList[0];
-  // const l = config.rssList.length;
-  // const r = Math.random() * 10 * l % l
-  // const source = Math.floor(r);
+  //const source = config.rssList[0];
+  const l = config.rssList.length;
+  const r = Math.floor(Math.random() * 10 * l % l);
+  const source = config.rssList[r];
   console.log(`Selected ${source}`);
   comics(source);
 });

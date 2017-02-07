@@ -1,5 +1,5 @@
 {
-	"rssList": ["http://www.smbc-comics.com"],
+	"rssList": [{ "url": "http://www.smbc-comics.com", "selector": "div#cc-comicbody img"},{ "url": "http://existentialcomics.com/", "selector": "img.comicImg"}],
 	"slack": {
 		"channel": "#web-comic-channel",
 		"token": "",

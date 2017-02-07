@@ -4,14 +4,14 @@ const slack = require('./slack');
 const cheerio = require('cheerio');
 
 module.exports = (source) => {
-  request.get(source, (err, res, body) => {
+  request.get(source.url, (err, res, body) => {
     if (err) return console.error(err);
     if (res.statusCode !== 200) {
       return console.error(new Error('Bad status code'));
     }
 
     const $ = cheerio.load(body);
-    const image = $('div#cc-comicbody img');
+    const image = $(source.selector);
     const imageSource = image.attr('src');
 
     const title = image.attr('title');
@@ -21,7 +21,7 @@ module.exports = (source) => {
       attachments: [{
         'image_url': imageSource.replace(' ','%20'),
       }],
-      message: 'Hey! check out today\'s comic. \n\n' + title,
+      message: 'Hey! check out today\'s comic. \n\n' + (title || ''),
     };
     console.log('Post data ', postData);
     return slack.push(postData, (err, data) => {
